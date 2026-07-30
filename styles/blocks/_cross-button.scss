@@ -1,0 +1,30 @@
+@use "../meta" as *;
+
+.cross-button {
+  @include reset-button;
+
+  width: rem(48);
+  aspect-ratio: 1;
+  position: relative;
+  left: rem(12);
+
+  &::before,
+  &::after {
+    @include abs-center;
+
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    border-radius: 5px;
+    rotate: 45deg;
+    background-color: var(--color-dark);
+  }
+
+  &::before {
+    rotate: 45deg;
+  }
+  &::after {
+    rotate: -45deg;
+  }
+}

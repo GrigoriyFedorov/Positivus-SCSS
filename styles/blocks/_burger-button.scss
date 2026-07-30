@@ -1,0 +1,20 @@
+@use "../meta" as *;
+
+.burger-button {
+  @include reset-button;
+
+  width: rem(48);
+  height: rem(24);
+  position: relative;
+
+  &::after {
+    @include abs-center;
+
+    content: '';
+    width: 50%;
+    height: 2px;
+    border-radius: 5px;
+    background-color: #000;
+    box-shadow: 0 -#{rem(8)}, 0 #{rem(8)};
+  }
+}

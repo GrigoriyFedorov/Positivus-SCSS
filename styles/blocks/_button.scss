@@ -1,0 +1,24 @@
+@use "../meta" as *;
+
+.button {
+  @include flex-center(true);
+  @include fluid-text(20, 18);
+
+  height: var(--button-height);
+  padding: 0 rem(35);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+
+  @include hover {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: #000;
+    border: var(--border);
+  }
+}
