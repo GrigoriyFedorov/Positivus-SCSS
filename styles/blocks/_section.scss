@@ -1,0 +1,13 @@
+@use "../meta" as *;
+
+.section {
+  padding-block: var(--section-padding-y);
+
+  &:first-child {
+    padding-top: rem(60);
+
+    @include mobile {
+      padding-top: var(--section-padding-y);
+    }
+  }
+}

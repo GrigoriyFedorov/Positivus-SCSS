@@ -25,4 +25,10 @@
   --button-height: #{rem(68)};
 
   --transition-duration: 0.2s;
+
+  
+
+  @include mobile {
+    --section-padding-y: #{rem(30)};
+  }
 }

@@ -235,6 +235,11 @@ svg * {
   --button-height: 4.25rem;
   --transition-duration: 0.2s;
 }
+@media (max-width: 47.9375rem) {
+  :root {
+    --section-padding-y: 1.875rem;
+  }
+}
 
 body {
   font-size: clamp(1rem, 0.9467821782rem + 0.198019802vw, 1.125rem);
@@ -312,13 +317,13 @@ h4 {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(1.125rem, 1.0717821782rem + 0.198019802vw, 1.25rem);
   height: var(--button-height);
   padding: 0 2.1875rem;
   border: var(--border);
   border-radius: var(--border-radius);
   background-color: var(--color-dark);
   color: var(--color-light);
+  font-size: 1.25rem;
 }
 @media (hover: hover) {
   .button:hover {
@@ -538,4 +543,99 @@ h4 {
   min-width: 5rem;
   min-height: 1.5rem;
   font-size: 1.25rem;
+}
+
+.section {
+  padding-block: var(--section-padding-y);
+}
+.section:first-child {
+  padding-top: 3.75rem;
+}
+@media (max-width: 47.9375rem) {
+  .section:first-child {
+    padding-top: var(--section-padding-y);
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6.5rem;
+}
+@media (max-width: 63.9375rem) {
+  .hero {
+    row-gap: 3.75rem;
+  }
+}
+.hero__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
+}
+@media (max-width: 47.9375rem) {
+  .hero__main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 2.1875rem;
+}
+@media (max-width: 47.9375rem) {
+  .hero__content {
+    display: contents;
+  }
+}
+.hero__title {
+  max-width: 33.1875rem;
+}
+@media (max-width: 47.9375rem) {
+  .hero__title {
+    order: -2;
+    margin-bottom: 0.625rem;
+  }
+}
+.hero__img-box {
+  flex-shrink: 2;
+}
+@media (max-width: 47.9375rem) {
+  .hero__img-box {
+    order: -1;
+    margin-bottom: 1.25rem;
+    width: 22.625rem;
+    height: 19.375rem;
+  }
+}
+.hero__description {
+  font-size: clamp(1rem, 0.8935643564rem + 0.396039604vw, 1.25rem);
+  max-width: 31.125rem;
+  line-height: 1.4;
+}
+@media (max-width: 47.9375rem) {
+  .hero__description {
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+  }
+}
+.hero__partners-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 2.3125rem;
+       column-gap: 2.3125rem;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.hero__button {
+  max-width: 24.375rem;
+  width: 100%;
+}
+.hero__partners-image {
+  height: 3rem;
+  filter: grayscale(1);
 }/*# sourceMappingURL=styles.css.map */
