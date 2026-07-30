@@ -27,4 +27,8 @@
   &::after {
     rotate: -45deg;
   }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
