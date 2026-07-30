@@ -510,9 +510,6 @@ h4 {
 .cross-button::after {
   rotate: -45deg;
 }
-.cross-button:focus:not(:focus-visible) {
-  outline: none;
-}
 
 .mobile-overlay {
   margin: 0;
