@@ -1,0 +1,25 @@
+@use "../meta" as *;
+
+.services {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(40);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+
+    @include mobile {
+      gap: rem(30);
+    }
+    
+    &:not(:last-child) {
+      margin-bottom: rem(100);
+
+      @include mobile {
+        margin-bottom: rem(70);
+      }
+    }
+  }
+}

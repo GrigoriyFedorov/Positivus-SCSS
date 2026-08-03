@@ -9,6 +9,10 @@ $tablet: 1023;
 $mobile-above: 768;
 $mobile: 767;
 
+$mobile-s-above: 481;
+$mobile-s: 480;
+
+
 @function rem($pixel) {
   @return math.div($pixel, 16) + rem;
 }
@@ -45,6 +49,18 @@ $mobile: 767;
 
 @mixin mobile {
   @media (max-width: rem($mobile)) {
+    @content;
+  }
+}
+
+@mixin mobile-s-above {
+  @media (min-width: rem($mobile-s-above)) {
+    @content;
+  }
+}
+
+@mixin mobile-s {
+  @media (max-width: rem($mobile-s)) {
     @content;
   }
 }
