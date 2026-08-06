@@ -13,7 +13,7 @@
 
   &__header {
     display: flex;
-    align-items: start;
+    align-items: center;
     column-gap: rem(40);
 
     &:not(:last-child) {
@@ -32,11 +32,15 @@
     }
   }
 
+  &__title {
+    white-space: nowrap;
+  }
+
   &__description {
     max-width: rem(580);
   }
 
-  &-hidden-x {
+  &--hidden-x {
     overflow-x: hidden;
   }
 }
