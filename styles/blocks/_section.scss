@@ -38,6 +38,10 @@
 
   &__description {
     max-width: rem(580);
+
+    &--short {
+      max-width: rem(320);
+    }
   }
 
   &--hidden-x {
