@@ -972,13 +972,24 @@ h4 {
   }
 }
 
-.process {
-  --processButtonCollor: var(--color-gray);
-}
 .process__list {
   display: flex;
   flex-direction: column;
   row-gap: 1.875rem;
+  counter-reset: counter 0;
+  list-style: none;
+}
+@media (max-width: 47.9375rem) {
+  .process__list {
+    row-gap: 1.25rem;
+  }
+}
+.process__step {
+  --counterContent: counter(counter);
+  counter-increment: counter;
+}
+.process__step:nth-child(-n+9) {
+  --counterContent: '0' counter(counter);
 }
 .process__summary {
   display: flex;
@@ -987,24 +998,26 @@ h4 {
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-.process__wrapper {
+.process__title {
+  font-size: clamp(1.125rem, 0.8056930693rem + 1.1881188119vw, 1.875rem);
   display: flex;
   align-items: center;
   -moz-column-gap: 1.5625rem;
        column-gap: 1.5625rem;
 }
+.process__title::before {
+  content: var(--counterContent);
+  font-size: 2em;
+}
 @media (max-width: 47.9375rem) {
-  .process__wrapper {
+  .process__title {
     -moz-column-gap: 2.0625rem;
          column-gap: 2.0625rem;
   }
-}
-.process__number {
-  font-size: clamp(1.875rem, 1.0767326733rem + 2.9702970297vw, 3.75rem);
-}
-.process__title {
-  font-size: clamp(1.125rem, 0.8056930693rem + 1.1881188119vw, 1.875rem);
 }
 .process__details {
   padding: 2.5rem 3.75rem;
@@ -1012,6 +1025,7 @@ h4 {
   border: var(--border);
   border-radius: var(--border-radius-large);
   box-shadow: var(--shadow);
+  transition-duration: var(--transition-duration);
 }
 .process__details[open] {
   background-color: var(--color-accent);
@@ -1023,6 +1037,9 @@ h4 {
 .process__details[open] .process__open-button::before {
   width: 35%;
 }
+.process__details:has(.process__summary:hover) {
+  background-color: var(--color-accent);
+}
 @media (max-width: 47.9375rem) {
   .process__details {
     padding: 1.875rem;
@@ -1032,6 +1049,11 @@ h4 {
   border: none;
   border-top: 1px solid var(--color-dark);
   margin-block: 1.875rem;
+}
+@media (max-width: 47.9375rem) {
+  .process__separator {
+    margin-block: 0.9375rem;
+  }
 }
 .process__open-button {
   height: 3.625rem;

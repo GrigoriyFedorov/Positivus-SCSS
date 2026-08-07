@@ -1,12 +1,27 @@
 @use "../meta" as *;
 
 .process {
-  --processButtonCollor: var(--color-gray);
 
   &__list {
     display: flex;
     flex-direction: column;
     row-gap: rem(30);
+    counter-reset: counter 0;
+    list-style: none;
+
+    @include mobile {
+      row-gap: rem(20);
+    }
+  }
+
+  &__step {
+    --counterContent: counter(counter);
+
+    counter-increment: counter;
+
+    &:nth-child(-n + 9) {
+      --counterContent: '0' counter(counter);
+    }
   }
 
   &__summary {
@@ -15,24 +30,24 @@
     align-items: center;
     column-gap: rem(20);
     cursor: pointer;
-  }
-
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    column-gap: rem(25);
-
-    @include mobile {
-      column-gap: rem(33);
-    }
-  }
-
-  &__number {
-    @include fluid-text(60, 30);
+    user-select: none;
   }
 
   &__title {
     @include fluid-text(30, 18);
+
+    display: flex;
+    align-items: center;
+    column-gap: rem(25);
+
+    &::before {
+      content: var(--counterContent);
+      font-size: 2em;
+    }
+
+    @include mobile {
+      column-gap: rem(33);
+    }
   }
 
   &__details {
@@ -41,6 +56,7 @@
     border: var(--border);
     border-radius: var(--border-radius-large);
     box-shadow: var(--shadow);
+    transition-duration: var(--transition-duration);
 
     &[open] {
       background-color: var(--color-accent);
@@ -55,6 +71,10 @@
       }
     }
 
+    &:has(.process__summary:hover) {
+      background-color: var(--color-accent);
+    }
+
     @include mobile {
       padding: rem(30);
     }
@@ -64,6 +84,10 @@
     border: none;
     border-top: 1px solid var(--color-dark);
     margin-block: rem(30);
+
+    @include mobile {
+      margin-block: rem(15);
+    }
   }
 
   &__open-button {
