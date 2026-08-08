@@ -1,0 +1,62 @@
+@use "../meta" as *;
+
+.team-card {
+  padding: rem(40) rem(35);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius-large);
+  position: relative;
+  height: 100%;
+
+  @include tablet {
+    padding-inline: rem(50);
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__image  {
+    &:not(:last-child) {
+      margin-right: rem(20);
+    }
+  }
+
+  &__name {
+    @include fluid-text(20, 18)
+  }
+
+  &__link {
+    @include flex-center;
+
+    position: absolute;
+    top: rem(40);
+    right: rem(35);
+    height: rem(34);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--color-dark);
+    color: var(--color-accent);
+
+    @include hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__social {
+    width: 50%;
+    aspect-ratio: 1;
+  }
+
+  &__description {
+    margin-top: rem(28);
+    padding-top: rem(28);
+    border-top: var(--border);
+
+    @include mobile {
+      margin-top: rem(20);
+      padding-top: rem(20);
+    }
+  }
+}

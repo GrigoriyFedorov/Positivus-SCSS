@@ -1,0 +1,33 @@
+@use "../meta" as *;
+
+.team {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: stretch;
+    gap: rem(40);
+
+    &:not(:last-child) {
+      margin-bottom: rem(40);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      gap: rem(30);
+    }
+  }
+
+  &__button {
+    display: block;
+    margin-left: auto;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
