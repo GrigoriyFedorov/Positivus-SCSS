@@ -1,0 +1,23 @@
+@use "../meta" as *;
+
+.pagination {
+
+  &__list {
+    display: flex; 
+  }
+
+  &__button {
+    @include reset-button;
+
+    padding: rem(10);
+    color: var(--color-light);
+
+    @include hover {
+      color: var(--color-accent);
+    }
+
+    &.is-current {
+      color: var(--color-accent);
+    }
+  }
+}
