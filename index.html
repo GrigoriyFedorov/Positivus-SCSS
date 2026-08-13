@@ -54,7 +54,7 @@
     </header>
 
     <main class="main">
-      <section class="section section--hidden-x container">
+      <section class="section section--hidden-x container" id="hero">
         <div class="section__body">
           <div class="hero">
             <div class="hero__main">
@@ -143,7 +143,7 @@
           </div>
         </div>
       </section>
-      <section class="section container">
+      <section class="section container" id="services">
         <header class="section__header">
           <h2 class="section__title highlighted-title">Services</h2>
           <div class="section__description">
@@ -415,7 +415,7 @@
           </div>
         </div>
       </section>
-      <section class="section container section--hidden-x">
+      <section class="section container section--hidden-x" id="cases">
         <header class="section__header">
           <h2 class="section__title highlighted-title">Case Studies</h2>
           <div class="section__description">
@@ -495,7 +495,7 @@
           </div>
         </div>
       </section>
-      <section class="section container">
+      <section class="section container" id="working-process">
         <header class="section__header">
           <h2 class="section__title highlighted-title">Our Working Process</h2>
           <div class="section__description section__description--short">
@@ -619,7 +619,7 @@
           </div>
         </div>
       </section>
-      <section class="section container">
+      <section class="section container" id="team">
         <header class="section__header">
           <h2 class="section__title highlighted-title">Team</h2>
           <div class="section__description">
@@ -946,7 +946,7 @@
           </div>
         </div>
       </section>
-      <section class="section container">
+      <section class="section container" id="testimonials">
         <header class="section__header">
           <h2 class="section__title highlighted-title">Testimonials</h2>
           <div class="section__description">
@@ -1208,7 +1208,7 @@
           </div>
         </div>
       </section>
-      <section class="section container">
+      <section class="section container" id="contact-us">
         <header class="section__header">
           <h2 class="section__title highlighted-title">Contact Us</h2>
           <div class="section__description section__description--short">
@@ -1217,49 +1217,186 @@
         </header>
         <div class="section__body">
           <div class="contact-us">
-            <div class="contact-us__inner">
-              <form class="contact-us__form">
-                <div class="contact-us__radios">
-                  <input class="contact-us__radios-button visually-hidden" type="radio" id="say-hi" name="radio" checked />
-                  <label class="contact-us__radios-label" for="say-hi">Say Hi</label>
-                  <input class="contact-us__radios-button visually-hidden" type="radio" id="get-a-quote" name="radio" />
-                  <label class="contact-us__radios-label" for="get-a-quote">Get a Quote</label>
-                </div>
-                <label class="contact-us__label">
-                  Name
+            <form class="contact-us__form">
+              <fieldset class="contact-us__radios">
+                <legend class="visually-hidden">Request type</legend>
+                <label class="contact-us__radios-label">
                   <input
-                    class="contact-us__input"
+                    class="contact-us__radios-button visually-hidden"
+                    type="radio"
+                    name="radio"
+                    value="Say Hi"
+                    checked
+                  />
+                  <span class="contact-us__radios-emulator"></span>
+                  <span class="contact-us__radios-text">Say Hi</span>
+                </label>
+                <label class="contact-us__radios-label">
+                  <input
+                    class="contact-us__radios-button visually-hidden"
+                    type="radio"
+                    name="radio"
+                    value="Get a Quote"
+                  />
+                  <span class="contact-us__radios-emulator"></span>
+                  <span class="contact-us__radios-text">Get a Quote</span>
+                </label>
+              </fieldset>
+              <div class="contact-us__body">
+                <div class="contact-us__field field">
+                  <label class="field__label" for="name"> Name </label>
+                  <input
+                    class="field__input"
                     type="text"
+                    name="name"
+                    id="name"
                     placeholder="Name"
                   />
-                </label>
-                <label class="contact-us__label">
-                  Email*
+                </div>
+                <div class="contact-us__field field">
+                  <label class="field__label" for="email"> Email* </label>
                   <input
-                    class="contact-us__input"
+                    class="field__input"
                     type="email"
+                    name="email"
+                    id="email"
                     placeholder="Email"
                     required
                   />
-                </label>
-                <label class="contact-us__label">
-                  Message*
-                  <textarea class="contact-us__textarea" required></textarea>
-                </label>
-                <button class="button" type="submit">Send Message</button>
-              </form>
-              <img
-                src="images/contact-us.svg"
-                alt=""
-                width="692"
-                height="648"
-                loading="lazy"
-              />
-            </div>
+                </div>
+                <div class="contact-us__field field">
+                  <label class="field__label" for="message"> Message* </label>
+                  <textarea
+                    class="field__textarea"
+                    name="message"
+                    id="message"
+                    placeholder="Message"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              <button class="contact-us__button button" type="submit">
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
       </section>
     </main>
+
+    <footer class="footer container">
+      <div class="footer__header">
+        <a href="#top" class="footer__logo">
+          <img
+            src="images/logo.svg"
+            alt="Positivus logo"
+            width="180"
+            height="30"
+            loading="lazy"
+          />
+        </a>
+        <nav class="footer__menu">
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a href="#top" class="footer__link">About Us</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#services" class="footer__link">Services</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#cases" class="footer__link">Use Cases</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#working-process" class="footer__link">Pricing</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#testimonials" class="footer__link">Blog</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="footer__socials">
+          <li class="footer__socials-item">
+            <a href="/" class="footer__socials-link" target="_blank">
+              <img
+                class="footer__socials-image"
+                src="images/socials/footer-linkedin.svg"
+                alt="LinkedIn"
+                width="30"
+                height="30"
+                loading="lazy"
+              />
+            </a>
+          </li>
+          <li class="footer__socials-item">
+            <a href="/" class="footer__socials-link" target="_blank">
+              <img
+                class="footer__socials-image"
+                src="images/socials/footer-facebook.svg"
+                alt="Facebook"
+                width="30"
+                height="30"
+                loading="lazy"
+              />
+            </a>
+          </li>
+          <li class="footer__socials-item">
+            <a href="/" class="footer__socials-link" target="_blank">
+              <img
+                class="footer__socials-image"
+                src="images/socials/footer-twitter.svg"
+                alt="Twitter"
+                width="30"
+                height="30"
+                loading="lazy"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__body">
+        <div class="footer__contact-us">
+          <h2 class="footer__contact-us-text highlighted-title">Contact us:</h2>
+          <address class="footer__address">
+            <ul class="footer__address-list">
+              <li class="footer__address-item">
+                <a href="mailto:info@positivus.com"
+                  >Email: info@positivus.com</a
+                >
+              </li>
+              <li class="footer__address-item">
+                <a href="tel:5555678901">Phone: 555-567-8901</a>
+              </li>
+              <li class="footer__address-item">
+                <span
+                  >Address: 1234 Main St <br />
+                  Moonstone City, Stardust State 12345</span
+                >
+              </li>
+            </ul>
+          </address>
+        </div>
+        <form class="footer__form">
+          <input
+            class="footer__input"
+            name="email"
+            type="email"
+            required
+            placeholder="Email"
+            aria-label="Email address"
+          />
+          <button class="footer__button button button--accent" type="submit">
+            Subscribe to news
+          </button>
+        </form>
+      </div>
+      <div class="footer__copyrating">
+        <span class="footer__copyrating-text"
+          >© <time datetime="2023">2023</time> Positivus. All Rights
+          Reserved.</span
+        >
+        <a href="/" class="footer__link" target="_blank">Privacy Policy</a>
+      </div>
+    </footer>
 
     <dialog
       class="mobile-overlay visible-mobile"

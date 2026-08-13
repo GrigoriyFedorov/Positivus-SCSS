@@ -1,0 +1,40 @@
+@use "../meta" as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(5);
+
+  @include mobile {
+    row-gap: rem(10);
+  }
+  
+  &__input,
+  &__textarea {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: rem(18) rem(30);
+
+    @include mobile {
+      padding-inline: rem(20);
+    }
+
+    &::placeholder {
+      color: var(--color-gray-alt);
+    }
+
+    @include hover {
+      background-color: var(--color-gray);
+    }
+  }
+
+  &__textarea {
+    min-height: rem(190);
+    resize: vertical;
+    transition-duration: 0s;
+
+    @include mobile {
+      min-height: rem(132);
+    }
+  }
+}

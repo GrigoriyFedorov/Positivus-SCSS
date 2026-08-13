@@ -18,7 +18,17 @@
 
   &--transparent {
     background-color: transparent;
-    color: #000;
+    color: var(--color-dark);
     border: var(--border);
+  }
+
+  &--accent {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    border: none;
+
+    @include hover {
+      scale: 104%;
+    }
   }
 }
